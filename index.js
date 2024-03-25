@@ -1,3 +1,6 @@
+// Armazenar o texto inicial do h1
+var initialText = "Refresh Me";
+
 // Função para gerar um número aleatório entre 1 e 6
 function generateRandomNumber() {
     return Math.floor(Math.random() * 6) + 1;
@@ -16,7 +19,7 @@ function refreshDiceImages() {
     // Atualizar as imagens dos dados com base nos números aleatórios gerados
     img1.setAttribute("src", "./images/dice" + randomNumber1 + ".png");
     img2.setAttribute("src", "./images/dice" + randomNumber2 + ".png");
-    
+
     // Mudanda o h1 dependendo quem ganha
     if (randomNumber1 > randomNumber2) {
         document.getElementById("result").innerHTML = "Player 1 Wins!"
@@ -29,6 +32,10 @@ function refreshDiceImages() {
 
 // Chamar a função para atualizar as imagens dos dados quando a página carregar
 window.onload = function () {
+    // Atualizar as imagens dos dados
     refreshDiceImages();
+    // Redefinir o h1 para o texto inicial
+    //document.getElementById("result").innerHTML = initialText;
 };
+
 
